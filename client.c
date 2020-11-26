@@ -54,7 +54,6 @@ int choose_user_turn(int *board){
 // modify chess board, and fill "sendbuf" with package format.
 void write_on_board(int *board, int location){
     print_board(board);
-    char user_choice;
     int user_choice = choose_user_turn(board);
     // Record which location on board is selected by inviter.
     board[location] = user_choice;
@@ -96,8 +95,8 @@ void pthread_recv(void* ptr)
             case 6: {
                 printf("Game Start!\n");
                 printf("Blank space is 0\n");
-                printf("Inviter is O\n");
-                printf("Invitee is X\n");
+                printf("Inviter is 1\n");
+                printf("Invitee is 2\n");
                 printf("Inviter go first.\n");
                 printf("Please input:-0~8\n");
                 print_board(board);
